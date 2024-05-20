@@ -1,1 +1,4 @@
-![Event-Driven Transactions App Architecture.jpeg](..%2F..%2F..%2FDownloads%2FEvent-Driven%20Transactions%20App%20Architecture.jpeg)
+## EVENT-DRIVEN MICROSERVICE
+<br/>
+
+![Proposed architecture](/Event-Driven%20Transactions%20App%20Architecture.jpeg)
