@@ -1,6 +1,8 @@
 spring:
   application:
     name: walletService
+  profiles:
+    active: dev
 server:
   port: 8084
 
@@ -16,3 +18,5 @@ cloud:
       secret-key: ${AWS_SECRET_KEY}
     dynamodb:
       endpoint: ${DB_ENDPOINT}
+    notification:
+      queue: ${NOTIFICATION_QUEUE}
