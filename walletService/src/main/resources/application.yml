@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: walletService
+server:
+  port: 8084
+
+cloud:
+  aws:
+    region:
+      static: eu-central-1
+      auto: false
+    stack:
+      auto: false
+    credentials:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
+    dynamodb:
+      endpoint: ${DB_ENDPOINT}
