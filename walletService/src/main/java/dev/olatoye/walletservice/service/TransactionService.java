@@ -33,7 +33,7 @@ public class TransactionService {
     private final QueueMessagingTemplate queueMessagingTemplate;
     private final ObjectMapper objectMapper;
     private final Logger LOG = LoggerFactory.getLogger(TransactionService.class);
-    Set<String> processedMessages = ConcurrentHashMap.newKeySet();
+    private final Set<String> processedMessages = ConcurrentHashMap.newKeySet();
 
     public TransactionService(WalletService walletService, DynamoDBMapper dynamoDBMapper, QueueMessagingTemplate queueMessagingTemplate, ObjectMapper objectMapper) {
         this.walletService = walletService;
@@ -42,7 +42,7 @@ public class TransactionService {
         this.objectMapper = objectMapper;
     }
 
-    @SqsListener(value = "transaction-sqs-queue", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
+    //@SqsListener(value = "transaction-sqs-queue", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
     public void logTransaction(String message, @Header(name = "MessageId") String messageId) {
 
         boolean isAdded = processedMessages.add(messageId);

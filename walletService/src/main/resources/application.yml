@@ -18,5 +18,7 @@ cloud:
       secret-key: ${AWS_SECRET_KEY}
     dynamodb:
       endpoint: ${DB_ENDPOINT}
+    transaction:
+      queue-url: ${TRANSACTION_QUEUE_URL}
     notification:
       queue: ${NOTIFICATION_QUEUE}
